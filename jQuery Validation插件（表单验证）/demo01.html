@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>表单验证</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.from {
+		width: 1000px;
+		height: 500px;
+		border: 1px solid red;
+		margin: 50px auto;
+	}
+	h1 {
+		font: 500 30px/4 "microsoft yahei";
+	}
+	.page {
+		height: 60px;
+		width: 100%;
+	}
+	.left {
+		width: 130px;
+		height: 30px;
+		font: 16px/30px "microsoft yahei";
+		color: #333;
+		text-align: right;
+		float: left;
+	}
+	.right {
+		float: left;
+	}
+	.right input {
+		width: 200px;
+		height: 28px;
+		border: 1px solid #ccc;
+		padding: 0 10px;
+		display: block;
+		outline: none;
+	}
+	.right span.active {
+		height: 30px;
+		font: 14px/30px "microsoft yahei";
+		color: #f40;
+	}
+</style>
+</head>
+<body>
+<div class="from">
+	<form action="##" id="demoFrom">
+		<h1>欢迎注册</h1>
+		<div class="page">
+			<div class="left">手机号：</div>
+			<div class="right">
+				<input type="text" placeholder="请输入手机号" name="usertel"/>
+			</div>
+		</div>
+		<div class="page">
+			<div class="left">用户名：</div>
+			<div class="right">
+				<input type="text" placeholder="请输入用户名" name="username"/>
+			</div>
+		</div>
+		<div class="page">
+			<div class="left">密码：</div>
+			<div class="right">
+				<input type="password" placeholder="请输入密码" name="password" id="password"/>
+			</div>
+		</div>
+		<div class="page">
+			<div class="left">确认密码：</div>
+			<div class="right">
+				<input type="password" placeholder="请再次输入密码" name="confirm-password"/>
+			</div>
+		</div>
+		<div class="page">
+			<button id="check">检查表单</button>
+		</div>
+		<div class="page">
+			<input type="submit" value="登录" />
+		</div>
+	</form>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/jquery.validate-1.13.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#demoFrom').validate({
+//		debug: true, //调试模式取消submit的默认提交功能 
+		errorElement: 'span',
+        errorClass: 'active',
+        focusInvalid: false,
+        ignore: "",
+        rules: {
+        	usertel: {
+        		required: true,
+        		number: true,
+        		rangelength: [11,11]
+        	},
+        	username: {
+                required: true,
+                minlength: 2,
+                maxlength: 10
+            },
+            password: {
+           		required: true,
+                minlength: 2,
+                maxlength: 16
+            },
+            "confirm-password": {
+            	equalTo: "#password"
+            }
+        },
+        messages: {
+        	usertel: {
+        		required: '请输入正确的手机号',
+        		number: '请输入数字',
+        		rangelength: '请输入正确的长度'
+        	},
+        	username: {
+                required: '请输入用户名',
+                minlength: '用户名不能小于2个字符',
+                maxlength: '用户名不能超过10个字符',
+                remote: '用户名不存在'
+            },
+            password: {
+           		required: '请输入密码',
+                minlength: '密码不能小于2个字符',
+                maxlength: '密码不能超过16个字符'
+            },
+            "confirm-password": {
+            	equalTo: "两次输入的密码不一致"
+            }
+        },
+        /*
+        submitHandler: function (form) {
+            console.log($(form).serialize());
+        }
+        */
+	});
+    $("#check").click(function () {
+        alert($("#demoFrom").valid() ? "填写正确！" : "填写错误！");
+    });
+});
+</script>
+</body>
+</html>

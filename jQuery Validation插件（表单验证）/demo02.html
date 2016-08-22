@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>表单验证</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	.from {
+		width: 1000px;
+		height: 500px;
+		border: 1px solid red;
+		margin: 50px auto;
+	}
+	h1 {
+		font: 500 30px/4 "microsoft yahei";
+	}
+	.page {
+		height: 60px;
+		width: 100%;
+	}
+	.left {
+		width: 130px;
+		height: 30px;
+		font: 16px/30px "microsoft yahei";
+		color: #333;
+		text-align: right;
+		float: left;
+	}
+	.right {
+		float: left;
+	}
+	.right input {
+		width: 200px;
+		height: 28px;
+		border: 1px solid #ccc;
+		padding: 0 10px;
+		display: block;
+		outline: none;
+	}
+	.right span.active {
+		height: 30px;
+		font: 14px/30px "microsoft yahei";
+		color: #f40;
+	}
+</style>
+</head>
+<body>
+<div class="from">
+	<form action="##" id="demoFrom">
+		<h1>欢迎注册</h1>
+		<div class="page">
+			<div class="left">手机号：</div>
+			<div class="right">
+				<input type="text" placeholder="请输入手机号" name="usertel"/>
+			</div>
+		</div>
+		<div class="page">
+			<div class="left">用户名：</div>
+			<div class="right">
+				<input type="text" placeholder="请输入用户名" name="username"/>
+			</div>
+		</div>
+		<div class="page">
+			<div class="left">密码：</div>
+			<div class="right">
+				<input type="password" placeholder="请输入密码" name="password" id="password"/>
+			</div>
+		</div>
+		<div class="page">
+			<div class="left">确认密码：</div>
+			<div class="right">
+				<input type="password" placeholder="请再次输入密码" name="confirm-password"/>
+			</div>
+		</div>
+		<div class="page">
+			<button id="check">检查表单</button>
+		</div>
+		<div class="page">
+			<input type="submit" value="登录" />
+		</div>
+	</form>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/jquery.validate-1.13.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#demoFrom').validate({
+//		debug: true, //调试模式取消submit的默认提交功能 
+		errorElement: 'span',
+        errorClass: 'active',
+        focusInvalid: false,
+        ignore: "",
+        rules: {
+        	usertel: {
+        		required: true,
+        		number: true,
+        		rangelength: [11,11]
+        	},
+        	username: {
+                required: true,
+                minlength: 2,
+                maxlength: 10
+            },
+            password: {
+           		required: true,
+                minlength: 2,
+                maxlength: 16
+            },
+            "confirm-password": {
+            	equalTo: "#password"
+            }
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).addClass(errorClass).removeClass(validClass);
+            $(element).fadeOut().fadeIn();
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).removeClass(errorClass).addClass(validClass);
+        },
+        submitHandler: function (form) {
+            console.log($(form).serialize())
+        }
+	});
+	$.extend($.validator.messages, {
+	    required: "必选字段",
+	    remote: "请修正该字段",
+	    email: "请输入正确格式的电子邮件",
+	    url: "请输入合法的网址",
+	    date: "请输入合法的日期",
+	    dateISO: "请输入合法的日期 (ISO).",
+	    number: "请输入合法的数字",
+	    digits: "只能输入整数",
+	    creditcard: "请输入合法的信用卡号",
+	    equalTo: "请再次输入相同的值",
+	    accept: "请输入拥有合法后缀名的字符串",
+	    maxlength: $.validator.format("请输入一个长度最多是 {0} 的字符串"),
+	    minlength: $.validator.format("请输入一个长度最少是 {0} 的字符串"),
+	    rangelength: $.validator.format("请输入一个长度介于 {0} 和 {1} 之间的字符串"),
+	    range: $.validator.format("请输入一个介于 {0} 和 {1} 之间的值"),
+	    max: $.validator.format("请输入一个最大为 {0} 的值"),
+	    min: $.validator.format("请输入一个最小为 {0} 的值")
+	});
+    $("#check").click(function () {
+        alert($("#demoFrom").valid() ? "填写正确！" : "填写错误！");
+    });
+});
+</script>
+</body>
+</html>
