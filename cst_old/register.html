@@ -1,0 +1,196 @@
+
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>注册-财视通</title>
+    <meta name="keywords" />
+    <meta name="description" />
+    <link type="image/x-icon" rel="shortcut icon" href="/mat/default/images/favicon.ico" />
+    
+
+<link rel="stylesheet" href="form.css" tppabs="http://cst58.com/mat/default/css/form.css" />
+<link rel="stylesheet" href="layout.css" tppabs="http://cst58.com/mat/default/css/layout.css" />
+    <link rel="stylesheet" href="style.css" tppabs="http://cst58.com/mat/default/css/style.css" />
+<link rel="stylesheet" type="text/css" href="jplayer.blue.monday.css" tppabs="http://cst58.com/mat/default/css/jplayer.blue.monday.css" />
+<link rel="stylesheet" href="slimbox.css" tppabs="http://cst58.com/mat/default/css/slimbox.css" />
+<link rel="stylesheet" type="text/css" href="ligerui-dialog-new.css" tppabs="http://cst58.com/mat/default/css/ligerui-dialog-new.css">
+<link rel="stylesheet" type="text/css" href="jquery.selectBox.css" tppabs="http://cst58.com/mat/default/css/jquery.selectBox.css">
+
+    
+<script src="jquery.min.js" tppabs="http://cst58.com/mat/lib/jquery.min.js"></script>
+<script src="base.js" tppabs="http://cst58.com/mat/lib/base.js"></script>
+<script src="ligerDialog-new.js" tppabs="http://cst58.com/mat/lib/ligerDialog-new.js"></script>
+<script src="jquery.selectBox.js" tppabs="http://cst58.com/mat/lib/jquery.selectBox.js"></script>
+<script src="custom-nav.js" tppabs="http://cst58.com/mat/lib/custom-nav.js"></script>
+<script src="superslide.js" tppabs="http://cst58.com/mat/lib/superslide.js"></script>
+<script src="jquery.jplayer.min.js" tppabs="http://cst58.com/mat/lib/jquery.jplayer.min.js"></script>
+<script src="jquery.validate.min.js" tppabs="http://cst58.com/mat/lib/jquery.validate.min.js"></script>
+<script src="jquery.cookie.js" tppabs="http://cst58.com/mat/lib/jquery.cookie.js"></script>
+<script src="juicer.js" tppabs="http://cst58.com/mat/lib/juicer.js"></script>
+<script src="lib.js" tppabs="http://cst58.com/mat/lib/lib.js"></script>
+<script src="common.js" tppabs="http://cst58.com/mat/lib/common.js"></script>
+
+</head>
+<body>
+    <div class="navbar login-bar">
+        <div class="container fix">
+            <a href="index.htm" tppabs="http://cst58.com/" class="logo">
+                <img src="logo.png" tppabs="http://cst58.com/mat/default/images/logo.png" alt="财视通"></a>
+        </div>
+    </div>
+    <div class="container login-wrap">
+        <form id="frmRegStep1">
+            <div class="form-tit">
+                <h2 class="nopd">欢迎注册</h2>
+            </div>
+            <div class="fix mt30">
+                <div class="w120 l tr">
+                    <span class="tips-txt fz14 mt10 dib">手机号：</span>
+                </div>
+                <div class="w630 l pl10">
+                    <input type="text" class="input-txt mr10" name="Mobile" id="txtMobile" placeholder="请输入手机号" maxlength="11" />
+                </div>
+            </div>
+            <div class="fix mt30">
+                <div class="w120 l tr">
+                    <span class="tips-txt fz14 mt10 dib">短信验证码：</span>
+                </div>
+                <div class="w630 l pl10">
+                    <div id="validate-wrap" class="dib">
+                        <input type="text" class="input-txt w230" name="Code" maxlength="6" /><a href="javascript:void(0);" class="btn warning w140 btnSmsCode mr10" data-target="#txtMobile" data-val="1" style="font-size: 14px;">发送短信验证码</a>
+                    </div>
+                </div>
+            </div>
+            <div class="fix mt30">
+                <div class="w120 l tr">
+                    <span class="tips-txt fz14 mt10 dib">推荐码：</span>
+                </div>
+                <div class="w630 l pl10">
+                    <input type="text" class="input-txt mr10" name="ReferrerID" placeholder="推荐人的推荐码或手机号" maxlength="11" value="" /><span class="light-txt">选填</span>
+                </div>
+            </div>
+            <div class="fix mt30">
+                <div class="w120 l tr">&nbsp;</div>
+                <div class="w630 l pl10">
+                    <label class="curp">
+                        <input type="checkbox" id="chkArgee" style="vertical-align: -2px"  checked="checked">
+                        <span class="ml5">我已阅读并同意<a href="regservice.html" tppabs="http://cst58.com/regservice.html" target="_blank">《会员服务协议》</a></span>
+                    </label>
+                </div>
+            </div>
+            <div class="fix mt20">
+                <div class="w120 l tr">&nbsp;</div>
+                <div class="w630 l pl10">
+                    <div class="w315">
+                        <a href="javascript:void(0);" class="btn alert large w315 btnRegister">确认注册</a>
+                        <div class="fix mt10">
+                            <div class="r">
+                                <span class="light-txt">已有账号？</span>
+                                <a href="login.html" tppabs="http://cst58.com/login.html" class="light-txt">马上<span class="error-txt">登录</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form id="frmRegStep2" style="display: none;">
+            <div class="form-tit">
+                <h2 class="nopd">设置登录密码</h2>
+            </div>
+
+            <div class="fix mt30">
+                <div class="w120 l tr">
+                    <span class="tips-txt fz14 mt10 dib">登录密码：</span>
+                </div>
+                <div class="w630 l pl10">
+                    <input type="password" class="input-txt" name="Password" placeholder="请输入登录密码" maxlength="20" />
+                </div>
+            </div>
+            <div class="fix mt10">
+                <div class="w120 l tr">&nbsp;</div>
+                <div class="w630 l pl10">
+                    <div class="fix">
+                        <div class="l mt5">
+                            <ul class="fix password-color-ls">
+                                <li class="selected">&nbsp;</li>
+                                <li>&nbsp;</li>
+                                <li>&nbsp;</li>
+                            </ul>
+                        </div>
+                        <div class="l light-txt pwdtxt">
+                            <span class="ml10 pwd-low">弱</span><span class="ml10">中</span><span class="ml10">强</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fix mt10">
+                <div class="w120 l tr">
+                    <span class="tips-txt fz14 mt10 dib">确认密码：</span>
+                </div>
+                <div class="w630 l pl10">
+                    <input type="password" class="input-txt" name="CheckPassword" placeholder="请再输入一次登录密码" />
+                </div>
+            </div>
+            <div class="fix mt100">
+                <div class="w120 l tr">&nbsp;</div>
+                <div class="w630 l pl10">
+                    <div class="w315">
+                        <a href="javascript:void(0);" class="btn alert large w315 btnCreateMember">确定</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form id="frmRegStep3" style="display: none;">
+            <div class="form-tit">
+                <h2 class="nopd">注册成功</h2>
+            </div>
+            <div class="fix mt30">
+                <div class="w120 l tr">
+                    <i class="iconfont icon-chenggong"></i>
+                </div>
+                <div class="w630 l pl10">
+                    <div class="sucess-info" id="divResult"></div>
+                    <p>
+                        <span id="spanTime">3</span>秒后自动跳转至
+                        <a href="login.html-ReturnUrl=-member.htm" tppabs="http://cst58.com/member" class="text-red">我的账户</a>，或前往
+                        <a href="index.htm" tppabs="http://cst58.com/" class="text-red">首页</a>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="login-footer">
+        <div class="container text-center">
+            <p>20xx-2015 版权所有 © 公司名称　　　粤ICP备13070910号-2</p>
+        </div>
+    </div>
+    
+<script id="tmpSms" type="text/template">
+    <div id="${ID}" class="dn">
+        <div class="pl5">
+            <div class="fix mt50">
+                <div class="w100 l tr">
+                    <span class="tips-txt fz14 mt10 dib">图形验证码：</span>
+                </div>
+                <div class="w360 l pl10">
+                    <input type="text" class="input-txt" name="ImageCode" style="border-right:0;width:216px" placeholder="图形验证码" maxlength="4" /><span class="dib vm" style="border:1px solid #CCCCCC;border-left:0;height:44px;"><img src="" height="42" width="119" style="display:block"></span>
+                    <div class="validate-txt tl fz14 minh14 ml10 error-code"></div>
+                </div>
+            </div>
+        </div>
+        <div class="mt30 mb30">
+            <a href="javascript:void(0);" class="btn alert large w240 btnSendSms">确定</a>
+        </div>
+    </div>
+</script>
+
+    <script src="jquery.Countdown.js" tppabs="http://cst58.com/mat/lib/jquery.Countdown.js"></script>
+    <script src="sms.js" tppabs="http://cst58.com/mat/default/script/sms.js"></script>
+    <script src="register.js" tppabs="http://cst58.com/mat/default/script/register.js"></script>
+</body>
+</html>

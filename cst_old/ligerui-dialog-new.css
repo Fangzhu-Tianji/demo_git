@@ -1,0 +1,1040 @@
+/* 任务栏 */
+
+.l-taskbar {
+    background-image: url("taskbar.png")/*tpa=http://cst58.com/mat/default/images/win/taskbar.png*/;
+    background-repeat: repeat-x;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    left: 0px;
+    bottom: -36px;
+    display: none;
+    z-index: 11000;
+}
+
+.l-taskbar-tasks {
+    width: 100%;
+    margin-top: 2px;
+}
+
+.l-taskbar-task {
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    margin: 2px;
+    float: left;
+    margin-left: 2px;
+    position: relative;
+    cursor: pointer;
+    background-repeat: repeat-x;
+}
+
+.l-taskbar-task {
+    background-image: url("taskbar-task.gif")/*tpa=http://cst58.com/mat/default/images/win/taskbar-task.gif*/;
+    border: 1px solid #676F7F;
+}
+
+.l-taskbar-task-icon {
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    width: 24px;
+    height: 25px;
+    overflow: hidden;
+    background: url("taskicon.gif")/*tpa=http://cst58.com/mat/default/images/win/taskicon.gif*/ no-repeat;
+}
+
+.l-taskbar-task-content {
+    margin-left: 27px;
+    color: White;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.l-taskbar-task-over {
+    border-color: #A7ADB5;
+    background-position: 0px -30px;
+}
+
+.l-taskbar-task-active {
+    border-color: #A2A8AF;
+    background-position: 0px -60px;
+}
+
+.l-taskbar {
+    _position: absolute;
+    _bottom: auto;
+    _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+    _background-image: url("taskbar.gif")/*tpa=http://cst58.com/mat/default/images/win/taskbar.gif*/;
+}
+
+.l-taskbar-top {
+    bottom: auto;
+    top: 0px;
+    background-color: White;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #687079;
+}
+
+.l-taskbar-top {
+    _position: absolute;
+    _top: expression(eval(document.documentElement.scrollTop));
+}
+
+
+/* ------------------
+   *   messagebox  *
+* --------------- */
+
+.l-messagebox {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 300px;
+    background: #F2F8FF;
+    border-bottom: 1px solid #82BCD8;
+    z-index: 9001;
+}
+
+.l-messagebox-title,
+.l-messagebox-close,
+.l-messagebox-close-over,
+.l-messagebox-btn,
+.l-messagebox-btn-l,
+.l-messagebox-btn-r,
+.l-messagebox-lt,
+.l-messagebox-rt {
+    background-image: url("box.gif")/*tpa=http://cst58.com/mat/default/images/win/box.gif*/;
+    background-repeat: no-repeat;
+}
+
+.l-messagebox .l-messagebox-title {
+    background-repeat: repeat-x;
+}
+
+.l-messagebox-title {
+    height: 21px;
+    line-height: 21px;
+    color: White;
+    font-weight: bold;
+    background-position: 0px -99px;
+}
+
+.l-messagebox-image {
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    background: url("box-icons.gif")/*tpa=http://cst58.com/mat/default/images/win/box-icons.gif*/ no-repeat;
+}
+
+.l-messagebox-image-donne {
+    background-position: 0px 0px;
+}
+
+.l-messagebox-image-error {
+    background-position: 0px -115px;
+}
+
+.l-messagebox-image-question {
+    background-position: 0px -70px;
+    height: 45px;
+}
+
+.l-messagebox-image-warn {
+    background-position: 0px -35px;
+}
+
+.l-messagebox-title-inner {
+    padding-left: 10px;
+}
+
+.l-messagebox-content {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.l-messagebox-buttons {
+    height: 30px;
+    position: relative;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.l-messagebox-buttons-inner {
+    margin-left: 10px;
+}
+
+.l-messagebox-close {
+    width: 13px;
+    height: 13px;
+    overflow: hidden;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    cursor: pointer;
+    background-position: -8px -24px;
+}
+
+.l-messagebox-close-over {
+    background-position: -8px -37px;
+}
+
+.l-messagebox-lt {
+    width: 3px;
+    height: 3px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    background-position: 0px -48px;
+}
+
+.l-messagebox-rt {
+    width: 3px;
+    height: 3px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 12;
+    background-position: -4px -48px;
+}
+
+.l-messagebox-l {
+    background: #82BCD8;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+
+.l-messagebox-r {
+    background: #82BCD8;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+.l-messagebox-btn {
+    height: 24px;
+    overflow: hidden;
+    background: url("box.gif")/*tpa=http://cst58.com/mat/default/images/win/box.gif*/ repeat-x;
+    width: 70px;
+    line-height: 24px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+    margin-left: 5px;
+}
+
+.l-messagebox-btn-inner {
+    text-align: center;
+}
+
+
+/* --------------
+   *   window  *
+* ------------ */
+
+.l-window-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=25);
+    opacity: 0.25;
+    background: #777;
+    display1: none;
+    font-size: 1px;
+    *zoom: 1;
+    overflow: hidden;
+    display: none;
+    z-index: 9000;
+}
+
+.l-window-mask-nobackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display1: none;
+    font-size: 1px;
+    *zoom: 1;
+    overflow: hidden;
+    display: none;
+    z-index: 9000;
+}
+
+.l-window-dragging {
+    filter: alpha(opacity=80);
+    opacity: 0.80;
+}
+
+.l-window-dragging .l-window-content {
+    visibility: hidden;
+}
+
+.l-window {
+    position: absolute;
+    border: 1px solid #AFCCF1;
+    background: #F5F8F9;
+    z-index: 9100;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.l-window-header {
+    position: relative;
+    padding-left: 10px;
+    color: #183152;
+    font-weight: bold;
+    height: 25px;
+    line-height: 24px;
+    background: #E2EDFE url("panel-header.gif")/*tpa=http://cst58.com/mat/default/images/panel/panel-header.gif*/ repeat-x;
+    overflow: hidden;
+}
+
+.l-window-header-buttons {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    height: 20px;
+}
+
+.l-window-toggle {
+    float: left;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background: url("panel-tools.gif")/*tpa=http://cst58.com/mat/default/images/panel/panel-tools.gif*/;
+    background-position: 0px 0px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.l-window-min {
+    float: left;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background: url("panel-tools.gif")/*tpa=http://cst58.com/mat/default/images/panel/panel-tools.gif*/;
+    background-position: -16px 0px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.l-window-max {
+    float: left;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background: url("panel-tools.gif")/*tpa=http://cst58.com/mat/default/images/panel/panel-tools.gif*/;
+    background-position: -16px -16px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.l-window-regain {
+    float: left;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background: url("panel-tools.gif")/*tpa=http://cst58.com/mat/default/images/panel/panel-tools.gif*/;
+    background-position: -32px -16px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.l-window-toggle-close {
+    background-position: 0px -16px;
+}
+
+.l-window-close {
+    float: left;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    background: url("panel-tools.gif")/*tpa=http://cst58.com/mat/default/images/panel/panel-tools.gif*/;
+    background-position: -32px 0px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.l-window-content {
+    overflow: hidden;
+    width: 100%;
+}
+
+.l-window-content-scroll {
+    overflow: scroll;
+}
+
+.l-window-content iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*分割* /* --------------
+   *   dialog  *
+* ------------ */
+
+.l-dialog {
+    position: absolute;
+    z-index: 10000;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    /* border: 1px solid #E0E0E0; */
+    box-shadow: 0 1px 6px rgba(99, 99, 99, .3);
+}
+
+.l-dialog table {
+    table-layout: auto;
+    border:
+}
+
+.l-dialog-fixed {
+    position: fixed;
+    right: 0px;
+    bottom: -100px;
+    _position: absolute;
+    _bottom: auto;
+    _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+}
+
+.l-dialog-table {}
+
+.l-dialog-body {
+    position: relative;
+    overflow: hidden;
+	background: #F2F2F2;
+}
+
+.l-dialog {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+}
+
+.l-dialog-cc {
+    background: #F2F2F2;
+}
+
+.l-dialog-tl,
+.l-dialog-tr,
+.l-dialog-bl,
+.l-dialog-br,
+.l-dialog-cl,
+.l-dialog-cr {
+    width: 0px;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.l-dialog-bl,
+.l-dialog-bc,
+.l-dialog-br {
+    height: 0px;
+    background: none;
+    padding: 0;
+    margin: 0;
+}
+
+.l-dialog-tl,
+.l-dialog-cl {
+    /*border-left: 1px solid #fff;*/
+}
+
+.l-dialog-tc {
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #9B2136;
+    /*border-bottom: 1px solid #9B2136;*/
+    padding-left: 30px;
+}
+
+.l-dialog-tr,
+.l-dialog-cr {
+    /*background: #F2F2F2;*/
+    /*border-right:2px solid #fff;*/
+}
+
+.l-dialog-bl {
+    background: none;
+}
+
+.l-dialog-bc {
+    background: none;
+}
+
+.l-dialog-br {
+    background: none;
+}
+
+.l-dialog-cl {
+    /*background: #fff;*/
+    background: #F2F2F2;
+}
+
+.l-dialog-tl {
+    /*background: #f3f3f3;*/
+    background: #9B2136;
+}
+
+.l-dialog-winbtns {
+    position: absolute;
+    right: 5px;
+    top: 19px;
+    height: 16px;
+}
+
+
+/*.l-dialog-winbtn,div.jbox .jbox-close, div.jbox .jbox-close-hover{background:url(../images/win/dialog-winbtns.gif) no-repeat;cursor:pointer;overflow:hidden; width:17px; height:16px; float:right; margin-right:4px;}
+.l-dialog-close,div.jbox .jbox-close, div.jbox .jbox-close-hover{background-position:-85px 0px;}*/
+
+.l-dialog-winbtn,
+div.jbox .jbox-close,
+div.jbox .jbox-close-hover {
+    background: url("close-icon.png")/*tpa=http://cst58.com/mat/default/images/close-icon.png*/ no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    width: 22px;
+    height: 21px;
+    float: right;
+    margin-right: 4px;
+}
+
+.l-dialog-close,
+div.jbox .jbox-close,
+div.jbox .jbox-close-hover {
+    background-position: 0px 0px;
+}
+
+.l-dialog-close-over {
+    background-position: -85px -16px;
+}
+
+.l-dialog-close-disabled {
+    background-position: -24px -32px;
+    cursor: default;
+}
+
+.l-dialog-min {
+    background-position: 0px 0px;
+}
+
+.l-dialog-min-over {
+    background-position: 0px -16px;
+}
+
+.l-dialog-min-disabled {
+    background-position: 0px -32px;
+    cursor: default;
+}
+
+.l-dialog-max {
+    background-position: -17px 0px;
+}
+
+.l-dialog-max-over {
+    background-position: -17px -16px;
+}
+
+.l-dialog-max-disabled {
+    background-position: -17px -32px;
+    cursor: default;
+}
+
+.l-dialog-recover {
+    background-position: -34px 0px;
+}
+
+.l-dialog-recover-over {
+    background-position: -34px -16px;
+}
+
+.l-dialog-recover-disabled {
+    background-position: -34px -32px;
+    cursor: default;
+}
+
+.l-dialog-collapse {
+    background-position: -51px 0px;
+}
+
+.l-dialog-collapse-over {
+    background-position: -51px -16px;
+}
+
+.l-dialog-collapse-disabled {
+    background-position: -51px -32px;
+    cursor: default;
+}
+
+.l-dialog-extend {
+    background-position: -68px 0px;
+}
+
+.l-dialog-extend-over {
+    background-position: -68px -16px;
+}
+
+.l-dialog-extend-disabled {
+    background-position: -68px -32px;
+    cursor: default;
+}
+
+.l-dialog-tc-inner {
+    position: relative;
+    height: 55px;
+    line-height: 55px;
+    padding-top: 2px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.l-dialog-title {
+    color: #fff;
+    font-weight: none;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.l-dialog td .l-dialog-title {
+    font-size: 22px;
+}
+
+.l-dialog-content.l-dialog-content-noimage {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+/*    padding-left: 30px;
+    padding-right: 30px;*/
+}
+
+.l-dialog-content-noimage div img {
+    vertical-align: middle;
+}
+
+.l-dialog-content.l-dialog-content-nopadding {
+    padding: 0;
+    margin: 0px;
+}
+
+.l-dialog-content iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+.l-dialog-content {
+    color: #666;
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    min-height: 64px;
+    margin-left: -74px;
+    text-align: center;
+}
+
+.l-dialog-image {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    display: none;
+    margin-top: 30px;
+    margin-left: 215px;
+}
+
+.l-dialog-image-warn {
+    background: url("failure-icon.png")/*tpa=http://cst58.com/mat/default/images/failure-icon.png*/ 0 0 no-repeat;
+}
+
+.l-dialog-image-error {
+    background: url("failure-icon.png")/*tpa=http://cst58.com/mat/default/images/failure-icon.png*/ 0 0 no-repeat;
+}
+
+.l-dialog-image-question {
+    background: url("question-icon.png")/*tpa=http://cst58.com/mat/default/images/question-icon.png*/ 0 0 no-repeat;
+}
+
+.l-dialog-image-donne {
+	background: url("success-icon.png")/*tpa=http://cst58.com/mat/default/images/success-icon.png*/ 0 center no-repeat;
+}
+
+
+/*.l-dialog-image-error{ background-position:0px -48px; }
+.l-dialog-image-question{ background-position:0px -144px; }*/
+
+
+/*.l-dialog-image-warn{ background-position:0px -96px; }*/
+
+.l-dialog-image-loading {
+    background: white url("loading2.gif")/*tpa=http://cst58.com/mat/default/images/common/loading2.gif*/ no-repeat center;
+    width: 28px;
+    height: 28px;
+}
+
+.l-dialog-btn-l,
+.l-dialog-btn-r {
+    display: none;
+}
+
+.l-dialog-buttons {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.l-dialog-buttons-inner {
+    display: inline-block;
+}
+
+.l-dialog-btn,
+.l-dialog-btn:hover {
+    display: inline-block;
+    background: #9B2136;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.l-dialog-content .message2 {
+    position: relative;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.l-dialog-content .message2 span {
+    margin-left: 10px;
+    display: block;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 1.4em;
+    padding-left: 116px;
+    padding-right: 50px;
+}
+
+.l-dialog-content .message2 span:before {
+    content: '';
+    position: absolute;
+    left: 53px;
+    top: 20px;
+    background: url("tip_icon.png")/*tpa=http://cst58.com/mat/default/images/win/tip_icon.png*/ 0 0 no-repeat;
+    width: 58px;
+    height: 56px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.l-dialog-content .message2 p {
+    text-align: center;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.l-dialog-content .message2 p a {
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    width: 130px;
+    background: #D6D2D2;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+.l-dialog-content .message2 p a:first-child {
+    background: #FA3E3D;
+    margin-right: 20px;
+}
+
+.l-dialog-btn-highlight {
+    border: 1px solid #3279a0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    background: #337fa9;
+    background: -moz-linear-gradient(top, #4994be, #337fa9);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#4994be), to(#337fa9));
+    background: -o-linear-gradient(top, #4994be, #337fa9);
+    background: -ms-linear-gradient(top, #4994be 0%, #337fa9 100%);
+    background: linear-gradient(top, #4994be, #337fa9);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#4994be', endColorstr='#337fa9');
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.22);
+}
+
+.l-dialog-content-frame {
+    overflow: hidden;
+}
+
+.l-dialog-btn {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    float: right;
+    margin-right: 18px;
+    font-size: 18px;
+}
+
+.l-dialog-btn-inner {
+    text-align: center;
+}
+
+.l-dialog-inputtext {
+    width: 280px;
+    border: 1px solid #0099CC;
+    line-height: 23px;
+    height: 25px;
+}
+
+.l-dialog-textarea {
+    width: 280px;
+    border: 1px solid #0099CC;
+    height: 80px;
+}
+
+.l-messagebox-btn {
+    background-position: 0px 0px;
+}
+
+.l-messagebox-btn-over {
+    background-position: 0px -51px;
+}
+
+.l-messagebox-btn-l {
+    height: 24px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 4px;
+    background-position: 0px -24px;
+}
+
+.l-messagebox-btn-over .l-messagebox-btn-l {
+    background-position: 0px -75px;
+}
+
+.l-messagebox-btn-r {
+    height: 24px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 4px;
+    background-position: -4px -24px;
+}
+
+.l-messagebox-btn-over .l-messagebox-btn-r {
+    background-position: -4px -75px;
+}
+
+
+/* 选择窗口,填充模式,隐藏滚动条 */
+
+.l-selectorwin .l-dialog-content {
+    overflow: hidden;
+    padding: 0px;
+}
+
+.l-selectorwin .l-dialog-content .l-form {
+    margin: 0;
+    padding: 2px;
+    background: #EAF2FF;
+    border-bottom: 1px solid #AECAF0;
+}
+
+.l-selectorwin .l-dialog-buttons {
+    margin-top: 0;
+}
+
+.l-selectorwin .l-panel {
+    border: 0;
+}
+
+#into-account {
+    padding: 20px 0 0px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.w100 {
+    width: 100px;
+}
+
+.into-account-box {
+    padding-top: 40px;
+    padding-left: 182px;
+    font-size: 14px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt60 {
+    margin-top: 60px;
+}
+
+.mr15 {
+    margin-right: 15px;
+}
+
+.mb80 {
+    margin-bottom: 80px;
+}
+
+.pwd-inp {
+    width: 170px;
+    height: 20px;
+    padding: 5px 5px 5px 5px;
+    line-height: 20px;
+    font-size: 14px;
+    border: solid 1px #E4E4E4;
+}
+
+.btn-group {
+    text-align: center;
+}
+
+.alert-btn {
+    width: 130px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.alert-btn:hover {
+    color: #fff;
+}
+
+.submit-btn {
+    color: #fff;
+    background: #FA3E3E;
+}
+
+.cancel-btn {
+    color: #fff;
+    background: #D6D2D2;
+}
+
+.alert_hint {
+    padding-top: 16px;
+    padding-bottom: 20px;
+    padding-left: 52px;
+    background: #F3F3F3;
+    border-top: 1px solid #DBDBDB;
+}
+
+.alert_hint h1 {
+    font-size: 15px;
+}
+
+.alert_hint ol li {
+    font-size: 13px;
+}
+
+#back-account {
+    padding: 20px 15px 30px;
+}
+
+#receive-account {
+    padding: 20px 25px 30px 37px;
+}
+
+.alert-table {
+    border-bottom: 1px solid #DBDBDB;
+    border-right: 1px solid #DBDBDB;
+}
+
+.alert-table th {
+    text-align: center;
+    padding: 5px;
+    border-left: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
+}
+
+.alert-table td {
+    text-align: center;
+    border-left: 1px solid #DBDBDB;
+    border-top: 1px solid #DBDBDB;
+    padding: 5px;
+}
+
+.w80 {
+    width: 80px;
+}
+
+.w105 {
+    width: 105px;
+}
+
+.w115 {
+    width: 115px;
+}
+
+.w205 {
+    width: 205px;
+}
+
+.w80 {
+    width: 80px;
+}
+
+.alert-default-tit{
+    padding:23px 10px 23px 10px;   
+}
+
+#aa .l-dialog-tc-inner{
+    height: auto;
+    line-height: auto;
+}
+.introduce-company-box{
+    text-align: left;
+    font-size: 14px;
+    padding: 40px;
+    color: #666;
+}
+.introduce-company-box p{
+    text-indent: 30px;
+    line-height: 2.2em;
+}
